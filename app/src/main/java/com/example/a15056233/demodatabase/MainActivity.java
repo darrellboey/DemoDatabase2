@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tvResults;
     ListView lv;
 
+    taskAdapter aa;
+    ArrayList<task> tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnInsert = (Button) findViewById(R.id.btnInsert);
         btnGetTasks = (Button) findViewById(R.id.btnGetTasks);
-        tvResults = (TextView)  findViewById(R.id.tvResults);
         lv = (ListView) findViewById(R.id.lv);
 
         btnGetTasks.setOnClickListener(new View.OnClickListener(){
@@ -46,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 tvResults.setText(txt);
 
                 DBHelper db2 = new DBHelper(MainActivity.this);
-                al =db2.getTask();
+                tasks = db2.getTask();
                 db2.close();
 
-                aa = new TaskArrayAdapter(MainActivity.this , R.layout.row,al);
+                aa = new taskAdapter(MainActivity.this, R.layout.row,tasks);
                 lv.setAdapter(aa);
             }
         });
