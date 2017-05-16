@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a15056233.demodatabase.MainActivity">
+
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Insert"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btnGetTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Get Tasks"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsert"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/tvResults"
+        android:layout_width="304dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetTasks"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="350dp"
+        android:layout_height="220dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+</android.support.constraint.ConstraintLayout>
